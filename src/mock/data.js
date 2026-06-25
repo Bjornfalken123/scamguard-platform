@@ -2,12 +2,14 @@ export const mockState = {
   user: {
     name: 'Björn',
     role: 'family_admin',
+    mode: 'family',
     primarySenior: 'Ingrid Falk',
-    plan: 'Familj Premium'
+    plan: 'Familj Premium',
+    email: 'bjorn@example.com'
   },
   seniors: [
-    { id: 'senior_1', name: 'Ingrid Falk', age: 82, status: 'protected', phone: '+46 70 123 45 67', protectionLevel: 'Förstärkt' },
-    { id: 'senior_2', name: 'Karl Falk', age: 79, status: 'protected', phone: '+46 70 765 43 21', protectionLevel: 'Standard' }
+    { id: 'senior_1', name: 'Ingrid Falk', age: 82, status: 'protected', phone: '+46 70 123 45 67', protectionLevel: 'Förstärkt', carrier: 'Telia', forwarding: 'active', mode: 'Senior-läge' },
+    { id: 'senior_2', name: 'Karl Falk', age: 79, status: 'protected', phone: '+46 70 765 43 21', protectionLevel: 'Standard', carrier: 'Tele2', forwarding: 'active', mode: 'Senior-läge' }
   ],
   calls: [
     { id: 'call_101', time: '08:14', date: 'Idag', number: '+46 8 501 234 88', label: 'Okänt nummer', risk: 'medium', outcome: 'Screenades och släpptes igenom', senior: 'Ingrid Falk' },
@@ -16,10 +18,15 @@ export const mockState = {
     { id: 'call_104', time: 'Mån 14:22', date: 'Mån', number: '+46 73 902 11 77', label: 'BankID-mönster', risk: 'high', outcome: 'Blockerat innan koppling', senior: 'Ingrid Falk' },
     { id: 'call_105', time: 'Sön 09:02', date: 'Sön', number: '+46 8 401 80 00', label: 'Legitimt ärende', risk: 'low', outcome: 'Godkänt efter screening', senior: 'Karl Falk' }
   ],
+  family: [
+    { id: 'fam_1', name: 'Björn Falk', role: 'Ägare', relation: 'Son', priority: 1, alerts: ['Högrisk', 'Missad vidarekoppling', 'Veckorapport'], status: 'active' },
+    { id: 'fam_2', name: 'Anna Falk', role: 'Anhörig', relation: 'Dotter', priority: 2, alerts: ['Högrisk', 'Veckorapport'], status: 'active' },
+    { id: 'fam_3', name: 'Peter Falk', role: 'Observatör', relation: 'Son', priority: 3, alerts: ['Månadsrapport'], status: 'pending' }
+  ],
   notifications: [
-    { id: 'n1', type: 'success', title: 'Månadsrapport klar', text: 'ScamGuard stoppade 18 misstänkta bedrägeriförsök senaste 30 dagarna.' },
+    { id: 'n1', type: 'success', title: 'Skyddet är aktivt', text: 'Alla okända samtal går via ScamGuard först.' },
     { id: 'n2', type: 'warning', title: 'BankID-mönster ökade', text: 'Tre samtal försökte skapa stress kring BankID eller bankkonto.' },
-    { id: 'n3', type: 'info', title: 'Familjen skyddad', text: 'Två seniorer är nu aktiva i familjeplanen.' }
+    { id: 'n3', type: 'info', title: 'Veckorapport skickas söndag', text: 'Anhöriga får en lugn sammanfattning utan onödiga larm.' }
   ],
   events: [
     { id: 'e1', time: '08:14', title: 'AI screenade ett samtal', detail: 'Okänt nummer fick beskriva ärendet innan koppling.' },
@@ -38,6 +45,58 @@ export const mockState = {
     estimatedMinutesSaved: 64,
     averageDecisionSeconds: 7,
     falseAlertsReported: 1
+  },
+  controlCenter: {
+    headline: 'Kontrollcenter',
+    reassurance: 'Här styr du skyddet. Själva tjänsten arbetar i bakgrunden.',
+    activeProfile: 'Ingrid Falk',
+    currentMode: 'Anhörig-läge',
+    seniorModePreview: {
+      title: 'Senior-läge',
+      text: 'Visar bara det viktigaste: skyddet är aktivt, senaste kontroll och en trygg supportknapp.'
+    },
+    familyModePreview: {
+      title: 'Anhörig-läge',
+      text: 'Full kontroll över skyddsnivåer, samtal, rapporter, anhöriga, notiser och integritet.'
+    },
+    systemStatus: [
+      { label: 'Telefonvidarekoppling', status: 'Aktiv', tone: 'good', detail: 'Okända samtal går via ScamGuard först.' },
+      { label: 'AI-screening', status: 'Aktiv', tone: 'good', detail: 'Regler först, AI vid osäkerhet.' },
+      { label: 'Anhörigkedja', status: '2 aktiva', tone: 'good', detail: 'Björn först, Anna som backup.' },
+      { label: 'Integritet', status: '30 dagar', tone: 'neutral', detail: 'Mockad lagringstid för rapportdata.' }
+    ],
+    protectionLevels: [
+      { id: 'standard', name: 'Standard', selected: false, text: 'Screenar okända samtal och blockerar tydliga riskmönster.' },
+      { id: 'enhanced', name: 'Förstärkt', selected: true, text: 'AI frågar mer innan samtal kopplas fram. Rekommenderas för Ingrid.' },
+      { id: 'maximum', name: 'Max', selected: false, text: 'Alla okända samtal kräver godkänd screening innan koppling.' }
+    ],
+    forwardingSteps: [
+      { step: 1, title: 'Kontrollera nummer', text: 'Seniorens nummer är kopplat till ScamGuard-profilen.' },
+      { step: 2, title: 'Aktivera vidarekoppling', text: 'Okända samtal skickas först till ScamGuard-numret.' },
+      { step: 3, title: 'Testa skyddet', text: 'Ett testsamtal simuleras så familjen ser flödet.' }
+    ],
+    aiSettings: [
+      { label: 'Känslighet', value: 'Balanserad', detail: 'Minimerar falska larm utan att släppa igenom högrisk.' },
+      { label: 'Transkribering', value: 'Endast vid risk', detail: 'Lagrar inte vanliga samtal i mockläget.' },
+      { label: 'Automatisk blockering', value: 'På vid högrisk', detail: 'Blockerar BankID-, fjärrstyrnings- och tidspressmönster.' }
+    ],
+    privacy: [
+      { label: 'Samtycke', value: 'Registrerat', detail: 'Senior och anhörig har godkänt skyddet i mockflödet.' },
+      { label: 'Datalagring', value: '30 dagar', detail: 'Samtalsmetadata för rapporter. Ljud lagras inte i prototypen.' },
+      { label: 'Export', value: 'Förberett', detail: 'Rapporter kan senare exporteras som PDF.' }
+    ],
+    subscription: {
+      plan: 'Familj Premium',
+      price: '149 kr/mån',
+      seats: '2 seniorer · 3 anhöriga',
+      status: 'Mockad prenumeration'
+    },
+    quickActions: [
+      { title: 'Testa skyddet', text: 'Simulera ett okänt samtal.' },
+      { title: 'Lägg till anhörig', text: 'Utöka notifieringskedjan.' },
+      { title: 'Granska tillåtna nummer', text: 'Minska risken att legitima samtal fastnar.' },
+      { title: 'Ring support', text: 'För senior-läge är detta huvudåtgärden.' }
+    ]
   },
   reports: {
     period: 'Senaste 30 dagarna',

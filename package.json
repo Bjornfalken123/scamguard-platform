@@ -1,8 +1,8 @@
 {
   "name": "scamguard-platform",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "private": true,
-  "description": "ScamGuard Platform - Reports Experience",
+  "description": "ScamGuard Platform - Control Center",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",

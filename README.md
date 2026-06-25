@@ -1,15 +1,20 @@
-# ScamGuard Platform v0.9.0 — Reports Experience
+# ScamGuard Platform v1.0.0 — Control Center
 
-Detta är nästa användarrelease ovanpå ScamGuard Core.
+Detta är en användarrelease ovanpå ScamGuard Core.
 
 ## Fokus
-Rapporterna ska visa vad ScamGuard gjort i bakgrunden:
+Control Center är platsen där användaren styr ScamGuard:
 
-- screenade samtal
-- stoppade bedrägeriförsök
-- högriskmönster
-- per-senior trygghetsstatus
-- rekommendationer för anhörig
+- senior-läge vs anhörig-läge
+- skyddsnivåer
+- telefonvidarekoppling
+- AI-inställningar
+- anhörigkedja
+- integritet/GDPR
+- abonnemang och support, mockat
+
+## Product line
+Det följer Product Bible: ScamGuard är ett skyddssystem som arbetar i bakgrunden. Appen är kontrollpanelen.
 
 ## Cloudflare settings
 
@@ -33,6 +38,7 @@ Output directory: tomt.
 
 - `/api/health`
 - `/api/core`
+- `/api/control-center`
 - `/api/reports`
 - `/api/events`
 - `/api/notifications`
