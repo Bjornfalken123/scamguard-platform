@@ -1,45 +1,30 @@
-# ScamGuard Platform v1.0.0 — Control Center
+# ScamGuard Platform v1.1.1 — Simplicity Correction
 
-Detta är en användarrelease ovanpå ScamGuard Core.
+This release corrects the product direction:
 
-## Fokus
-Control Center är platsen där användaren styr ScamGuard:
+**ScamGuard is not an app people actively manage. ScamGuard is an automated protection engine. The app is only a calm control panel.**
 
-- senior-läge vs anhörig-läge
-- skyddsnivåer
-- telefonvidarekoppling
-- AI-inställningar
-- anhörigkedja
-- integritet/GDPR
-- abonnemang och support, mockat
+## What changed
 
-## Product line
-Det följer Product Bible: ScamGuard är ett skyddssystem som arbetar i bakgrunden. Appen är kontrollpanelen.
+- Less emphasis on relatives as active decision-makers.
+- More emphasis on the ScamGuard engine doing the work automatically.
+- Cleaner navigation: Overview, Reports, Settings, Calls, Trust, Support.
+- Relatives are now positioned as report receivers / backup, not the people responsible for protection.
+- UI copy is calmer and simpler.
 
-## Cloudflare settings
+## Cloudflare
 
-Build command:
+Use the same settings:
 
-```bash
-npm install && npm run build
+```text
+Build command: npm install && npm run build
+Deploy command: npx wrangler deploy
 ```
 
-Deploy command:
+## Test commands used
 
-```bash
-npx wrangler deploy
+```text
+npm run build
+node --check src/worker/index.js
+npx wrangler deploy --dry-run
 ```
-
-Root directory: tomt.
-
-Output directory: tomt.
-
-## API
-
-- `/api/health`
-- `/api/core`
-- `/api/control-center`
-- `/api/reports`
-- `/api/events`
-- `/api/notifications`
-- `/api/models`

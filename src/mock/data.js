@@ -48,21 +48,21 @@ export const mockState = {
   },
   controlCenter: {
     headline: 'Kontrollcenter',
-    reassurance: 'Här styr du skyddet. Själva tjänsten arbetar i bakgrunden.',
+    reassurance: 'ScamGuard gör jobbet automatiskt. Appen är bara kontrollpanelen: status, rapporter och enkla inställningar.',
     activeProfile: 'Ingrid Falk',
-    currentMode: 'Anhörig-läge',
+    currentMode: 'Kontrollpanel',
     seniorModePreview: {
       title: 'Senior-läge',
-      text: 'Visar bara det viktigaste: skyddet är aktivt, senaste kontroll och en trygg supportknapp.'
+      text: 'Visar bara det viktigaste: skyddet är aktivt, senaste kontroll och en supportknapp.'
     },
     familyModePreview: {
       title: 'Anhörig-läge',
-      text: 'Full kontroll över skyddsnivåer, samtal, rapporter, anhöriga, notiser och integritet.'
+      text: 'En avskalad vy för rapporter och inställningar. Anhöriga följer skyddet, men behöver inte driva det.'
     },
     systemStatus: [
       { label: 'Telefonvidarekoppling', status: 'Aktiv', tone: 'good', detail: 'Okända samtal går via ScamGuard först.' },
       { label: 'AI-screening', status: 'Aktiv', tone: 'good', detail: 'Regler först, AI vid osäkerhet.' },
-      { label: 'Anhörigkedja', status: '2 aktiva', tone: 'good', detail: 'Björn först, Anna som backup.' },
+      { label: 'Rapportmottagare', status: '2 aktiva', tone: 'good', detail: 'Får rapporter och högriskinformation vid behov.' },
       { label: 'Integritet', status: '30 dagar', tone: 'neutral', detail: 'Mockad lagringstid för rapportdata.' }
     ],
     protectionLevels: [
@@ -93,15 +93,15 @@ export const mockState = {
     },
     quickActions: [
       { title: 'Testa skyddet', text: 'Simulera ett okänt samtal.' },
-      { title: 'Lägg till anhörig', text: 'Utöka notifieringskedjan.' },
+      { title: 'Hantera rapportmottagare', text: 'Välj vilka som får rapporter.' },
       { title: 'Granska tillåtna nummer', text: 'Minska risken att legitima samtal fastnar.' },
-      { title: 'Ring support', text: 'För senior-läge är detta huvudåtgärden.' }
+      { title: 'Ring support', text: 'Hjälp utan tekniska val.' }
     ]
   },
 
   stories: {
-    headline: 'ScamGuard Stories',
-    reassurance: 'Här visas hela skyddsresan: från okänt samtal till AI-beslut, anhörigvarning och rapport.',
+    headline: 'Så fungerar skyddet',
+    reassurance: 'En enkel förklaring av vad som händer i bakgrunden. Användaren behöver normalt inte göra något.',
     activeStory: 'story_scam_blocked',
     scenarios: [
       {
@@ -110,7 +110,7 @@ export const mockState = {
         type: 'Högrisk',
         tone: 'bad',
         summary: 'Ett okänt nummer påstår sig ringa från banken. ScamGuard stoppar samtalet innan Ingrid blir kopplad.',
-        outcome: 'Blockerat · Anhörig notifierad',
+        outcome: 'Blockerat automatiskt',
         senior: 'Ingrid Falk',
         duration: '42 sek',
         riskScore: 94,
@@ -122,8 +122,8 @@ export const mockState = {
           { time: '00:31', label: 'Samtalet stoppas', text: 'Samtalet kopplas inte vidare till Ingrid.' },
           { time: '00:42', label: 'Anhörig får notis', text: 'Björn får en lugn sammanfattning med rekommenderad åtgärd.' }
         ],
-        notification: 'Högrisk-samtal stoppades. Ingen åtgärd krävs just nu.',
-        userFeeling: 'Ingrid märker inget. Familjen vet att skyddet fungerade.'
+        notification: 'Högrisk-samtal stoppades. Ingen åtgärd krävs.',
+        userFeeling: 'Ingrid märker inget. ScamGuard sköter skyddet i bakgrunden.'
       },
       {
         id: 'story_safe_call',
@@ -147,11 +147,11 @@ export const mockState = {
       },
       {
         id: 'story_family_alert',
-        title: 'Familjen agerar tillsammans',
+        title: 'AI är osäker',
         type: 'Medelrisk',
         tone: 'warning',
-        summary: 'AI är osäker och skickar en mild varning till anhörigkedjan istället för att stressa senioren.',
-        outcome: 'Pausat · Anhörig granskar',
+        summary: 'AI är osäker och pausar samtalet utan att stressa senioren. En rapportnotis kan skickas vid behov.',
+        outcome: 'Pausat · Kräver ingen akut åtgärd',
         senior: 'Ingrid Falk',
         duration: '1 min 10 sek',
         riskScore: 61,
@@ -159,11 +159,11 @@ export const mockState = {
         timeline: [
           { time: '00:00', label: 'Samtal screenas', text: 'Uppringaren beskriver ett serviceärende men saknar tydlig referens.' },
           { time: '00:26', label: 'AI blir osäker', text: 'Samtalet klassas som medelrisk istället för att blockeras direkt.' },
-          { time: '00:45', label: 'Anhörig notifieras', text: 'Björn får välja om numret ska tillåtas framöver.' },
+          { time: '00:45', label: 'Rapport skapas', text: 'Händelsen hamnar i rapporten så den kan granskas senare.' },
           { time: '01:10', label: 'Regel uppdateras', text: 'Numret kan läggas till i tillåtna kontakter om det verifieras.' }
         ],
         notification: 'Medelrisk: kontrollera om numret ska tillåtas.',
-        userFeeling: 'Familjen får kontroll utan att skapa oro hos senioren.'
+        userFeeling: 'Tjänsten hanterar osäkerhet utan att lägga ansvar på senior eller anhörig.'
       },
       {
         id: 'story_senior_mode',
@@ -188,7 +188,7 @@ export const mockState = {
     demoFeed: [
       { title: 'AI analyserar inkommande samtal', text: 'Okänt nummer skickas till ScamGuard först.', tone: 'info' },
       { title: 'Riskbeslut fattas', text: 'Regler och AI väger samman signaler.', tone: 'warning' },
-      { title: 'Familjen informeras', text: 'Endast relevant information skickas vidare.', tone: 'good' },
+      { title: 'Rapport uppdateras', text: 'Händelsen sparas som enkel rapportdata.', tone: 'good' },
       { title: 'Rapport uppdateras', text: 'Trygghetsbeviset blir synligt i appen.', tone: 'good' }
     ]
   },
@@ -221,7 +221,7 @@ export const mockState = {
     ],
     recommendations: [
       { title: 'Behåll förstärkt skydd för Ingrid', text: 'Flera samtal försökte skapa stress kring BankID. Nuvarande nivå är rätt.' },
-      { title: 'Lägg till en extra anhörig som backup', text: 'Om primär anhörig missar en högriskvarning kan nästa person notifieras.' },
+      { title: 'Behåll rapportmottagare som backup', text: 'Anhöriga ska främst följa rapporter, inte behöva agera löpande.' },
       { title: 'Granska tillåtna nummer varje månad', text: 'Det minskar risken att legitima vård- eller serviceärenden fastnar.' }
     ]
   }

@@ -1,8 +1,8 @@
 {
   "name": "scamguard-platform",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
-  "description": "ScamGuard Platform - User Flows",
+  "description": "ScamGuard Platform - Simplicity Correction",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
