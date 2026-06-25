@@ -1,32 +1,24 @@
-# ScamGuard Platform v0.2 — Design Foundation
+# ScamGuard Platform v0.3.0 — Design Foundation
 
-Detta är första riktiga produktplattformen för ScamGuard PWA.
+This release replaces the experimental prototype with a React/Vite PWA foundation that is ready for future product releases.
 
-## Vad ingår
+## Cloudflare settings
 
-- React + Vite + TypeScript
-- Cloudflare Worker + Assets
-- Mobilanpassad PWA-liknande appyta
-- Design tokens och komponentstruktur
-- Mockdata för person, anhöriga, samtal och statistik
-- Fungerande navigation: Hem, Skydd, Samtal, Anhöriga, Rapporter, Installation, Inställningar
-- API-endpoints: `/api/health` och `/api/foundation`
+- Root directory: empty
+- Build command: `npm install && npm run build`
+- Deploy command: `npx wrangler deploy`
+- Output directory: empty
 
-## Cloudflare Workers Builds
+## What is included
 
-Använd dessa settings:
+- React/Vite PWA foundation
+- Design tokens and global theme
+- Reusable UI components
+- App shell and mobile-first navigation
+- Mock API/data layer
+- Dashboard, Protection, Calls, Family, Reports, Installation, Settings, Support pages
+- API endpoints: `/api/health`, `/api/foundation`, `/api/mock/dashboard`
 
-```text
-Root directory: tomt
-Build command: npm install && npm run build
-Deploy command: npx wrangler deploy
-Output directory: tomt
-```
+## Next release
 
-Inga KV, D1, R2, secrets eller externa integrationer behövs i denna version.
-
-## Versionsmål
-
-v0.2 är en design- och arkitekturgrund. Den är inte kopplad till riktig telefoni eller AI ännu.
-
-Nästa sprint: Dashboard v1 med fler tillstånd, interaktioner och tydligare samtalsflöden.
+v0.3.1 — Dashboard depth: richer dashboard, more realistic AI states, detailed action cards.
