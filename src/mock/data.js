@@ -98,6 +98,100 @@ export const mockState = {
       { title: 'Ring support', text: 'För senior-läge är detta huvudåtgärden.' }
     ]
   },
+
+  stories: {
+    headline: 'ScamGuard Stories',
+    reassurance: 'Här visas hela skyddsresan: från okänt samtal till AI-beslut, anhörigvarning och rapport.',
+    activeStory: 'story_scam_blocked',
+    scenarios: [
+      {
+        id: 'story_scam_blocked',
+        title: 'Bedrägerisamtal stoppas',
+        type: 'Högrisk',
+        tone: 'bad',
+        summary: 'Ett okänt nummer påstår sig ringa från banken. ScamGuard stoppar samtalet innan Ingrid blir kopplad.',
+        outcome: 'Blockerat · Anhörig notifierad',
+        senior: 'Ingrid Falk',
+        duration: '42 sek',
+        riskScore: 94,
+        evidence: ['BankID nämndes', 'Tidspress', 'Fjärrstyrningsmönster', 'Okänt nummer'],
+        timeline: [
+          { time: '00:00', label: 'Okänt samtal', text: 'Samtalet går först till ScamGuard via vidarekoppling.' },
+          { time: '00:07', label: 'AI frågar ärende', text: 'Uppringaren säger att det gäller ett bankärende.' },
+          { time: '00:18', label: 'Riskmönster hittas', text: 'AI upptäcker BankID och brådskande språk.' },
+          { time: '00:31', label: 'Samtalet stoppas', text: 'Samtalet kopplas inte vidare till Ingrid.' },
+          { time: '00:42', label: 'Anhörig får notis', text: 'Björn får en lugn sammanfattning med rekommenderad åtgärd.' }
+        ],
+        notification: 'Högrisk-samtal stoppades. Ingen åtgärd krävs just nu.',
+        userFeeling: 'Ingrid märker inget. Familjen vet att skyddet fungerade.'
+      },
+      {
+        id: 'story_safe_call',
+        title: 'Legitimt samtal släpps igenom',
+        type: 'Låg risk',
+        tone: 'good',
+        summary: 'En vårdcentral ringer från ett okänt nummer. ScamGuard screenar kort och kopplar fram samtalet.',
+        outcome: 'Godkänt · Kopplat vidare',
+        senior: 'Karl Falk',
+        duration: '18 sek',
+        riskScore: 12,
+        evidence: ['Tydligt ärende', 'Ingen känslig begäran', 'Vårdrelaterat språk'],
+        timeline: [
+          { time: '00:00', label: 'Okänt nummer', text: 'Samtalet skickas till ScamGuard först.' },
+          { time: '00:05', label: 'AI verifierar ärendet', text: 'Uppringaren beskriver ett bokat vårdärende.' },
+          { time: '00:12', label: 'Låg risk', text: 'Inga bedrägerimönster hittas.' },
+          { time: '00:18', label: 'Kopplas vidare', text: 'Karl får samtalet som vanligt.' }
+        ],
+        notification: 'Legitimt samtal kopplades vidare efter screening.',
+        userFeeling: 'Karl får viktiga samtal utan att behöva hantera tekniken.'
+      },
+      {
+        id: 'story_family_alert',
+        title: 'Familjen agerar tillsammans',
+        type: 'Medelrisk',
+        tone: 'warning',
+        summary: 'AI är osäker och skickar en mild varning till anhörigkedjan istället för att stressa senioren.',
+        outcome: 'Pausat · Anhörig granskar',
+        senior: 'Ingrid Falk',
+        duration: '1 min 10 sek',
+        riskScore: 61,
+        evidence: ['Oklart ärende', 'Okänt företag', 'Ingen akut fara'],
+        timeline: [
+          { time: '00:00', label: 'Samtal screenas', text: 'Uppringaren beskriver ett serviceärende men saknar tydlig referens.' },
+          { time: '00:26', label: 'AI blir osäker', text: 'Samtalet klassas som medelrisk istället för att blockeras direkt.' },
+          { time: '00:45', label: 'Anhörig notifieras', text: 'Björn får välja om numret ska tillåtas framöver.' },
+          { time: '01:10', label: 'Regel uppdateras', text: 'Numret kan läggas till i tillåtna kontakter om det verifieras.' }
+        ],
+        notification: 'Medelrisk: kontrollera om numret ska tillåtas.',
+        userFeeling: 'Familjen får kontroll utan att skapa oro hos senioren.'
+      },
+      {
+        id: 'story_senior_mode',
+        title: 'Senior öppnar appen',
+        type: 'Trygghet',
+        tone: 'good',
+        summary: 'Senior-läget visar bara att skyddet fungerar och vad som hänt, utan svåra inställningar.',
+        outcome: 'Skydd aktivt · Ingen åtgärd',
+        senior: 'Ingrid Falk',
+        duration: '5 sek',
+        riskScore: 4,
+        evidence: ['Enkel vy', 'Tydlig status', 'Supportknapp'],
+        timeline: [
+          { time: 'Start', label: 'Appen öppnas', text: 'Ingrid ser direkt att skyddet är aktivt.' },
+          { time: 'Direkt', label: 'Ingen åtgärd', text: 'Appen säger att hon inte behöver göra något.' },
+          { time: 'Vid behov', label: 'Support', text: 'En stor knapp leder till hjälp.' }
+        ],
+        notification: 'Allt fungerar. Du behöver inte göra något.',
+        userFeeling: 'Senioren får lugn, inte fler beslut.'
+      }
+    ],
+    demoFeed: [
+      { title: 'AI analyserar inkommande samtal', text: 'Okänt nummer skickas till ScamGuard först.', tone: 'info' },
+      { title: 'Riskbeslut fattas', text: 'Regler och AI väger samman signaler.', tone: 'warning' },
+      { title: 'Familjen informeras', text: 'Endast relevant information skickas vidare.', tone: 'good' },
+      { title: 'Rapport uppdateras', text: 'Trygghetsbeviset blir synligt i appen.', tone: 'good' }
+    ]
+  },
   reports: {
     period: 'Senaste 30 dagarna',
     headline: 'ScamGuard stoppade 18 misstänkta bedrägeriförsök innan de nådde familjen.',
