@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.5.0 — Protection & Onboarding
+
+### Added
+- Komplett Skydd & Installation-upplevelse.
+- Aktiveringschecklista med progress.
+- Skyddsnivåer med tydliga konsekvenser.
+- Mockad operatörsguide för vidarekoppling.
+- Testflöde som simulerar ett högrisksamtal.
+- Anhörigformulär för varningskontakt.
+- Regler och undantag för betrodda samtal.
+
+### Changed
+- Protection-sidan är nu en produktupplevelse i stället för en enkel inställningsvy.
+- Appens versionsinfo är uppdaterad till v0.5.0.
+- Package-version uppdaterad till 0.5.0.
+
+### Known issues
+- Inga inställningar sparas till backend ännu.
+- Telefoni, AI och notifieringar är fortfarande mockade.
+
 ## v0.4.1 — Dashboard Experience
 
 ### Added
@@ -12,8 +32,3 @@
 
 ### Changed
 - Startsidan är nu en riktig produktupplevelse i stället för en enkel grundvy.
-- Sidebar-version uppdaterad till v0.4.1.
-
-### Known issues
-- Knapparna är fortfarande mockade och sparar inte data.
-- Riktig backend och telefoni är inte kopplade ännu.

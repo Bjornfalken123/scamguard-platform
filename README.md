@@ -1,6 +1,6 @@
-# ScamGuard Platform — v0.4.1 Dashboard Experience
+# ScamGuard Platform — v0.5.0 Protection & Onboarding
 
-Detta är en patch-release ovanpå Clean v1. Ladda upp ZIP:ens innehåll i GitHub. Filer med samma namn ersätts automatiskt.
+Detta är nästa produktrelease ovanpå v0.4.1. Ladda upp ZIP:ens innehåll i GitHub. Filer med samma namn ersätts automatiskt och nya filer läggs till.
 
 ## Cloudflare
 
@@ -18,12 +18,16 @@ npx wrangler deploy
 
 ## Nytt i denna release
 
-- Förbättrad dashboard
-- Systemstatus
-- Dagens skyddsöversikt
-- Senaste samtal
-- Familjestatus
-- Rekommendationer
-- Ny timeline-komponent
+- Skydd & Installation är nu en komplett mockad produktupplevelse.
+- Aktiveringsstatus med checklista.
+- Skyddsnivåer: Standard, Förstärkt och Max.
+- Mockad vidarekopplingsguide för Telia, Tele2, Telenor och Tre.
+- Testflöde för risksamtal.
+- Anhörigformulär och regler/undantag.
+- Uppdaterad releaseversion i appens sidebar.
 
-Nästa release: Protection & Installation.
+## Viktigt
+
+Det finns fortfarande inga externa kopplingar. Telefoni, AI och sparning är simulerade på ytan.
+
+Nästa release: Calls Experience — samtalshistorik, samtalsdetaljer, AI-bedömning och tidslinje.
