@@ -1,8 +1,18 @@
-# ScamGuard Platform — v0.5.0 Protection & Onboarding
+# ScamGuard Platform v0.6.0 — Calls Experience
 
-Detta är nästa produktrelease ovanpå v0.4.1. Ladda upp ZIP:ens innehåll i GitHub. Filer med samma namn ersätts automatiskt och nya filer läggs till.
+This release adds the first complete product module: **Calls Experience**.
 
-## Cloudflare
+## What changed
+
+- Complete call history experience
+- Search and filters
+- Detailed AI decision view
+- Timeline per call
+- Short transcript preview
+- Risk score and status logic
+- Expanded mock dataset
+
+## Cloudflare settings
 
 Build command:
 
@@ -16,18 +26,12 @@ Deploy command:
 npx wrangler deploy
 ```
 
-## Nytt i denna release
+## API test routes
 
-- Skydd & Installation är nu en komplett mockad produktupplevelse.
-- Aktiveringsstatus med checklista.
-- Skyddsnivåer: Standard, Förstärkt och Max.
-- Mockad vidarekopplingsguide för Telia, Tele2, Telenor och Tre.
-- Testflöde för risksamtal.
-- Anhörigformulär och regler/undantag.
-- Uppdaterad releaseversion i appens sidebar.
+- `/api/health`
+- `/api/release`
+- `/api/dashboard`
 
-## Viktigt
+## Important
 
-Det finns fortfarande inga externa kopplingar. Telefoni, AI och sparning är simulerade på ytan.
-
-Nästa release: Calls Experience — samtalshistorik, samtalsdetaljer, AI-bedömning och tidslinje.
+This is still a mocked PWA. No real telephony, AI, user accounts or database connections are active yet.

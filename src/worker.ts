@@ -13,7 +13,7 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === '/api/health') {
-      return json({ ok: true, service: 'ScamGuard Platform', version: '0.4.0' });
+      return json({ ok: true, service: 'ScamGuard Platform', version: '0.6.0' });
     }
 
     if (url.pathname === '/api/dashboard') {
@@ -29,9 +29,9 @@ export default {
 
     if (url.pathname === '/api/release') {
       return json({
-        version: '0.4.0',
-        codename: 'Clean Platform Reset',
-        purpose: 'Stable React/Vite/Cloudflare foundation for future product releases'
+        version: '0.6.0',
+        codename: 'Calls Experience',
+        purpose: 'Complete call history and AI decision review experience with mock data'
       });
     }
 

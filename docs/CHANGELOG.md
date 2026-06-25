@@ -1,34 +1,19 @@
 # Changelog
 
-## v0.5.0 — Protection & Onboarding
+## v0.6.0 — Calls Experience
 
 ### Added
-- Komplett Skydd & Installation-upplevelse.
-- Aktiveringschecklista med progress.
-- Skyddsnivåer med tydliga konsekvenser.
-- Mockad operatörsguide för vidarekoppling.
-- Testflöde som simulerar ett högrisksamtal.
-- Anhörigformulär för varningskontakt.
-- Regler och undantag för betrodda samtal.
+- Complete Calls Experience module.
+- Filterable call history with realistic mock scenarios.
+- Search by number, category, status or reason.
+- Call detail panel with AI decision, risk score, timeline and transcript.
+- Risk-aware visual states for blocked, warning and allowed calls.
+- Expanded mock call dataset.
 
 ### Changed
-- Protection-sidan är nu en produktupplevelse i stället för en enkel inställningsvy.
-- Appens versionsinfo är uppdaterad till v0.5.0.
-- Package-version uppdaterad till 0.5.0.
+- Updated release metadata to v0.6.0.
+- Improved mobile layout for the Calls module.
 
-### Known issues
-- Inga inställningar sparas till backend ännu.
-- Telefoni, AI och notifieringar är fortfarande mockade.
-
-## v0.4.1 — Dashboard Experience
-
-### Added
-- Ny dashboard som känns mer som färdig produkt.
-- Systemstatus för telefonskydd, AI-screening och anhörigvarningar.
-- Dagens skyddsstatus med snabb översikt.
-- Snabbåtgärder för demo, skyddsnivå, anhöriga och rapport.
-- Timeline-komponent för senaste aktivitet.
-- Utökad mockdata för dashboard, system och familjestatus.
-
-### Changed
-- Startsidan är nu en riktig produktupplevelse i stället för en enkel grundvy.
+### Notes
+- All data is still mocked.
+- No external telephony, AI or database integrations are active.

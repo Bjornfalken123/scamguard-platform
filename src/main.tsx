@@ -47,7 +47,7 @@ function App() {
             </button>
           ))}
         </nav>
-        <div className="sidebarCard"><b>Release v0.5.0</b><span>Protection & Onboarding: aktivering, skyddsnivåer och testflöde.</span></div>
+        <div className="sidebarCard"><b>Release v0.4.0</b><span>Ren plattform, redo för nästa sprint.</span></div>
       </aside>
       <main className="main">
         <header className="topbar">
