@@ -16,6 +16,7 @@ export default {
     if (url.pathname === '/api/events') return json({ events: mockState.events });
     if (url.pathname === '/api/notifications') return json({ notifications: mockState.notifications });
     if (url.pathname === '/api/models') return json({ riskLevels, modules });
+    if (url.pathname === '/api/reports') return json({ period: mockState.reports.period, metrics: mockState.metrics, reports: mockState.reports });
     if (url.pathname.startsWith('/api/')) return json({ error: 'Not found', path: url.pathname }, 404);
     return new Response(APP_HTML, { headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } });
   }

@@ -1,22 +1,17 @@
-# ScamGuard Platform — Core v1.0
+# ScamGuard Platform v0.9.0 — Reports Experience
 
-Release: `v0.8.0`
-Codename: `ScamGuard Core v1.0`
+Detta är nästa användarrelease ovanpå ScamGuard Core.
 
-This release adds the internal foundation for the next phase of ScamGuard:
+## Fokus
+Rapporterna ska visa vad ScamGuard gjort i bakgrunden:
 
-- Core version model
-- Module registry
-- Risk models
-- Mock state
-- Event engine mock
-- Notification mock
-- Mock API endpoints
-- Cloudflare Worker serving the PWA
+- screenade samtal
+- stoppade bedrägeriförsök
+- högriskmönster
+- per-senior trygghetsstatus
+- rekommendationer för anhörig
 
 ## Cloudflare settings
-
-Root directory: empty
 
 Build command:
 
@@ -30,22 +25,15 @@ Deploy command:
 npx wrangler deploy
 ```
 
-Output directory: empty
+Root directory: tomt.
 
-## Test endpoints
+Output directory: tomt.
+
+## API
 
 - `/api/health`
 - `/api/core`
+- `/api/reports`
 - `/api/events`
 - `/api/notifications`
 - `/api/models`
-
-## Product principle
-
-ScamGuard is not just an app. ScamGuard is a background protection system. The PWA is the control panel.
-
-Core exists so that UI modules can later use real APIs without being rewritten.
-
-## Next release
-
-Suggested next release: `Reports Experience`, built on top of Core.
