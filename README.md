@@ -1,36 +1,29 @@
-# ScamGuard Platform v0.4.0 — Clean Platform Reset
+# ScamGuard Platform — v0.4.1 Dashboard Experience
 
-Detta är en ren nystart av ScamGuard Platform.
+Detta är en patch-release ovanpå Clean v1. Ladda upp ZIP:ens innehåll i GitHub. Filer med samma namn ersätts automatiskt.
 
-## Cloudflare settings
+## Cloudflare
 
-- Root directory: tomt
-- Build command: `npm install && npm run build`
-- Deploy command: `npx wrangler deploy`
-- Output directory: tomt
+Build command:
 
-## Viktigt
+```bash
+npm install && npm run build
+```
 
-Rensa GitHub-repot helt innan du laddar upp denna version.
-Ladda inte upp gamla filer ovanpå denna.
+Deploy command:
 
-## API-test
+```bash
+npx wrangler deploy
+```
 
-- `/api/health`
-- `/api/dashboard`
-- `/api/release`
+## Nytt i denna release
 
-## Innehåll
+- Förbättrad dashboard
+- Systemstatus
+- Dagens skyddsöversikt
+- Senaste samtal
+- Familjestatus
+- Rekommendationer
+- Ny timeline-komponent
 
-- React + TypeScript + Vite
-- Cloudflare Worker
-- Cloudflare Assets
-- Mobil PWA-grund
-- Dashboard
-- Skydd
-- Samtal
-- Anhöriga
-- Rapporter
-- Inställningar
-- Mockdata
-- Komponentstruktur
+Nästa release: Protection & Installation.
