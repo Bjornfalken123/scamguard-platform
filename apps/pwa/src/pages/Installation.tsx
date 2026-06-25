@@ -1,0 +1,3 @@
+import { Card } from '../components/Card';
+const steps = ['Konto skapat','Senior tillagd','Anhörig verifierad','Vidarekoppling aktiverad','Testsamtal genomfört'];
+export function Installation(){return <div className="page-grid"><Card className="hero-card"><p className="eyebrow">Installation</p><h1>Skyddet är nästan helt aktiverat</h1><p>Den färdiga tjänsten guidar användaren genom vidarekoppling och testsamtal.</p></Card><Card><h3>Checklista</h3><div className="timeline">{steps.map((s,i)=><div className="timeline-row" key={s}><span className={i<4?'dot done':'dot'}></span><div><strong>{s}</strong><p>{i<4?'Klart':'Nästa steg i riktig implementation'}</p></div></div>)}</div></Card></div>}

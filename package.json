@@ -1,14 +1,22 @@
 {
   "name": "scamguard-platform",
-  "version": "0.1.0-foundation",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "check": "node scripts/check-foundation.js"
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "wrangler deploy"
   },
-  "devDependencies": {
-    "wrangler": "^4.0.0"
-  }
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "typescript": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest",
+    "wrangler": "latest"
+  },
+  "devDependencies": {}
 }

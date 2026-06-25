@@ -1,6 +1,8 @@
 name = "scamguard-platform"
-main = "backend/workers/app/src/index.js"
+main = "backend/workers/src/index.ts"
 compatibility_date = "2026-06-23"
 
-[observability]
-enabled = true
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
