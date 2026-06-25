@@ -123,7 +123,7 @@ export function Calls({ data }: { data: any }) {
     <div className="callsExperience">
       <div className="callsHeader card">
         <div>
-          <span className="eyebrow">Calls Experience v0.6.0</span>
+          <span className="eyebrow">Calls Experience</span>
           <h2>Samtalshistorik</h2>
           <p>Alla okända samtal screenas först av ScamGuard. Här syns vad som hände, varför AI:n tog beslutet och om anhörig notifierades.</p>
         </div>

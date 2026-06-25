@@ -166,10 +166,62 @@ export const mockData = {
     }
   ] as ScamCall[],
   family: [
-    { name: 'Anna Svensson', phone: '+46 70 123 45 67', role: 'Primär', alerts: 'SMS + push' },
-    { name: 'Erik Svensson', phone: '+46 72 123 46 68', role: 'Sekundär', alerts: 'Push' },
-    { name: 'Maria Svensson', phone: '+46 73 456 67 89', role: 'Backup', alerts: 'SMS' }
+    {
+      id: 1,
+      name: 'Anna Svensson',
+      phone: '+46 70 123 45 67',
+      email: 'anna@example.com',
+      relation: 'Dotter',
+      role: 'Primär anhörig',
+      priority: 1,
+      status: 'Aktiv',
+      alerts: 'SMS + push',
+      responseTime: '2 min',
+      lastSeen: 'Idag 09:42',
+      permissions: ['Hög risk', 'Ändra skydd', 'Veckorapport'],
+      notificationRules: { high: true, medium: true, low: false, weekly: true }
+    },
+    {
+      id: 2,
+      name: 'Erik Svensson',
+      phone: '+46 72 123 46 68',
+      email: 'erik@example.com',
+      relation: 'Son',
+      role: 'Anhörig',
+      priority: 2,
+      status: 'Aktiv',
+      alerts: 'Push',
+      responseTime: '8 min',
+      lastSeen: 'Igår 20:14',
+      permissions: ['Hög risk', 'Veckorapport'],
+      notificationRules: { high: true, medium: false, low: false, weekly: true }
+    },
+    {
+      id: 3,
+      name: 'Maria Lind',
+      phone: '+46 73 456 67 89',
+      email: 'maria@example.com',
+      relation: 'Granne',
+      role: 'Backup',
+      priority: 3,
+      status: 'Inbjuden',
+      alerts: 'SMS',
+      responseTime: 'Ej mätt',
+      lastSeen: 'Väntar på svar',
+      permissions: ['Hög risk'],
+      notificationRules: { high: true, medium: false, low: false, weekly: false }
+    }
   ],
+  familyEvents: [
+    { id: 1, time: '09:34', title: 'Anna notifierades', detail: 'Hög risk: BankID-bedrägeri stoppades innan Ingrid kopplades in.', type: 'critical' },
+    { id: 2, time: 'Igår 17:24', title: 'Varning skickad till Anna', detail: 'Medelrisk-samtal markerades för uppföljning.', type: 'warning' },
+    { id: 3, time: 'Måndag 13:12', title: 'Samtal släpptes igenom', detail: 'Försäkringsbolag godkändes efter AI-screening.', type: 'success' },
+    { id: 4, time: 'Söndag 15:05', title: 'Erik fick kopia', detail: 'Teknisk support-bedrägeri blockerades automatiskt.', type: 'critical' }
+  ],
+  familyInvitePreview: {
+    recipient: 'Ny anhörig',
+    message: 'Du har blivit inbjuden att hjälpa till att skydda Ingrid med ScamGuard. Du får bara varningar när något verkar riskfyllt.'
+  },
   recommendations: [
     'Lägg till ytterligare en anhörig som backup.',
     'Verifiera vårdcentralens nummer i betrodda kontakter.',
