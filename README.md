@@ -1,18 +1,22 @@
-# ScamGuard Platform v0.7.0 — Family Experience
+# ScamGuard Platform — Core v1.0
 
-This release adds the first fuller family module. It follows the Product Bible principle that ScamGuard is a background protection system and the app is the control centre for family, settings and trust.
+Release: `v0.8.0`
+Codename: `ScamGuard Core v1.0`
 
-## What changed
+This release adds the internal foundation for the next phase of ScamGuard:
 
-- New Family Experience page with a more complete family dashboard
-- Member detail view with role, priority, permissions and status
-- Notification settings per relative
-- Family event timeline connected to risk events
-- Mocked add-relative flow with steps: contact details, role, invite
-- Expanded family mock data
-- Updated release metadata to v0.7.0
+- Core version model
+- Module registry
+- Risk models
+- Mock state
+- Event engine mock
+- Notification mock
+- Mock API endpoints
+- Cloudflare Worker serving the PWA
 
 ## Cloudflare settings
+
+Root directory: empty
 
 Build command:
 
@@ -26,12 +30,22 @@ Deploy command:
 npx wrangler deploy
 ```
 
-## API test routes
+Output directory: empty
+
+## Test endpoints
 
 - `/api/health`
-- `/api/release`
-- `/api/dashboard`
+- `/api/core`
+- `/api/events`
+- `/api/notifications`
+- `/api/models`
 
-## Important
+## Product principle
 
-This is still a mocked PWA. No real telephony, AI, user accounts or database connections are active yet.
+ScamGuard is not just an app. ScamGuard is a background protection system. The PWA is the control panel.
+
+Core exists so that UI modules can later use real APIs without being rewritten.
+
+## Next release
+
+Suggested next release: `Reports Experience`, built on top of Core.

@@ -1,20 +1,14 @@
 {
   "name": "scamguard-platform",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
+  "description": "ScamGuard Platform - Core v1.0",
   "type": "module",
   "scripts": {
-    "build": "vite build",
-    "deploy": "wrangler deploy",
-    "dev": "vite --host 0.0.0.0"
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs"
   },
-  "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "typescript": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "wrangler": "latest"
-  },
-  "devDependencies": {}
+  "devDependencies": {
+    "wrangler": "^4.103.0"
+  }
 }

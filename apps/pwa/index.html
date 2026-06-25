@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ScamGuard Platform</title>
+  <meta name="theme-color" content="#0b2f2a" />
+  <style>
+    :root{--bg:#eef5f1;--ink:#12201d;--muted:#66736f;--card:#fff;--line:#dbe7e2;--green:#0f7b5f;--green2:#0b3d35;--soft:#dff3eb;--amber:#a96d00;--red:#b42318;--shadow:0 18px 45px rgba(15,49,42,.10);--r:28px;--r2:18px;--tap:56px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;color:var(--ink)}
+    *{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#f6fbf8 0%,#eaf3ef 100%);min-height:100vh} button,input{font:inherit}
+    .app{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;min-height:100vh;padding:22px;gap:22px}.sidebar{background:#092e29;color:white;border-radius:34px;padding:24px;box-shadow:var(--shadow);position:sticky;top:22px;height:calc(100vh - 44px);display:flex;flex-direction:column}.brand{display:flex;gap:12px;align-items:center;margin-bottom:34px}.logo{width:44px;height:44px;border-radius:15px;background:linear-gradient(135deg,#e7fff5,#41d39d);display:grid;place-items:center;color:#06342d;font-weight:900}.brand h1{font-size:20px;margin:0}.brand p{font-size:12px;margin:2px 0 0;color:#aad2c6}.nav{display:grid;gap:8px}.nav button{border:0;background:transparent;color:#cce1db;text-align:left;padding:14px 14px;border-radius:16px;cursor:pointer;display:flex;gap:10px;align-items:center}.nav button.active,.nav button:hover{background:rgba(255,255,255,.11);color:white}.sideFooter{margin-top:auto;background:rgba(255,255,255,.08);border-radius:22px;padding:16px}.sideFooter b{display:block}.sideFooter span{color:#b7d5cd;font-size:13px}.main{padding:12px 0 36px}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:22px}.eyebrow{font-size:13px;color:var(--green);font-weight:800;letter-spacing:.08em;text-transform:uppercase}.title{font-size:44px;line-height:1.02;margin:6px 0 8px}.subtitle{font-size:17px;color:var(--muted);max-width:650px}.pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:white;border-radius:999px;padding:10px 14px;font-weight:800;box-shadow:0 6px 18px rgba(15,49,42,.06)}.dot{width:9px;height:9px;border-radius:99px;background:#18a66f;box-shadow:0 0 0 5px #d9f5e9}.grid{display:grid;grid-template-columns:1.3fr .7fr;gap:18px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:rgba(255,255,255,.86);border:1px solid rgba(219,231,226,.9);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);backdrop-filter:blur(10px)}.card h3{margin:0 0 8px;font-size:18px}.metric{font-size:36px;font-weight:900;letter-spacing:-.04em}.muted{color:var(--muted)}.hero{background:radial-gradient(circle at 10% 0%,#effff8 0,#fff 50%);border:1px solid var(--line);border-radius:34px;padding:28px;box-shadow:var(--shadow)}.heroRow{display:flex;gap:18px;align-items:center}.shield{width:72px;height:72px;border-radius:24px;background:linear-gradient(135deg,#0d755a,#25c990);display:grid;place-items:center;color:white;font-size:34px}.statusTitle{font-size:30px;font-weight:900;margin:0}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:0;border-radius:16px;padding:13px 16px;font-weight:900;cursor:pointer;background:#0b3d35;color:white}.btn.secondary{background:var(--soft);color:#0b3d35}.list{display:grid;gap:12px}.row{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:14px;border-radius:18px;background:#f7fbf9;border:1px solid #e3ece8}.risk{font-size:12px;font-weight:900;border-radius:99px;padding:7px 10px}.risk.low{background:#dff7eb;color:#08724f}.risk.medium{background:#fff2ce;color:#9a6400}.risk.high{background:#ffe2df;color:#a92015}.module{display:flex;gap:12px;padding:14px;border-radius:18px;background:#f7fbf9;border:1px solid #e3ece8}.moduleIcon{width:40px;height:40px;border-radius:14px;background:#e1f4ec;display:grid;place-items:center}.tag{font-size:12px;border-radius:999px;padding:6px 9px;background:#edf3f0;color:#38544c;font-weight:800}.tag.ready{background:#dcf7eb;color:#08724f}.tag.mock{background:#eaf0ff;color:#2447a7}.tag.planned{background:#f1ece5;color:#7a541a}.hidden{display:none}.page{display:none}.page.active{display:block}.sectionTitle{font-size:24px;margin:0 0 14px}.coreMap{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.footerNote{margin-top:18px;color:var(--muted);font-size:13px}@media(max-width:860px){.app{display:block;padding:12px}.sidebar{height:auto;position:static;border-radius:26px;margin-bottom:16px}.nav{grid-template-columns:repeat(4,1fr)}.nav button{font-size:12px;justify-content:center}.sideFooter{display:none}.top{display:block}.title{font-size:34px}.grid,.cards,.coreMap{grid-template-columns:1fr}.heroRow{align-items:flex-start}.pill{margin-top:12px}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo">SG</div><div><h1>ScamGuard</h1><p>Platform Core</p></div></div>
+      <nav class="nav" id="nav">
+        <button class="active" data-page="dashboard">🛡️ Hem</button>
+        <button data-page="core">⚙️ Core</button>
+        <button data-page="events">🔔 Händelser</button>
+        <button data-page="api">🧩 API</button>
+      </nav>
+      <div class="sideFooter"><b>v0.8.0</b><span>ScamGuard Core v1.0</span></div>
+    </aside>
+    <main class="main">
+      <div class="top">
+        <div><div class="eyebrow">ScamGuard Platform</div><h2 class="title">Core är på plats.</h2><p class="subtitle">Den här releasen lägger grunden för moduler, mock-API, datamodeller, händelser och framtida adapter-lager för telefoni och AI.</p></div>
+        <div class="pill"><span class="dot"></span> Deploybar grund</div>
+      </div>
+
+      <section id="dashboard" class="page active">
+        <div class="hero">
+          <div class="heroRow"><div class="shield">✓</div><div><p class="statusTitle">Skyddssystemet är strukturerat</p><p class="muted">ScamGuard är nu byggt runt Core: modeller, mockdata, API-kontrakt och moduler. Nästa funktioner kan byggas utan att göra om grunden.</p><div class="actions"><button class="btn" onclick="showPage('core')">Visa Core</button><button class="btn secondary" onclick="showPage('api')">Testa API</button></div></div></div>
+        </div>
+        <div class="cards" style="margin-top:18px">
+          <div class="card"><div class="muted">Screenade samtal 30d</div><div class="metric">142</div><p class="muted">Mockdata från Call Intelligence.</p></div>
+          <div class="card"><div class="muted">Blockerade försök</div><div class="metric">18</div><p class="muted">Kommer drivas av Reports Engine.</p></div>
+          <div class="card"><div class="muted">Aktiva anhöriga</div><div class="metric">3</div><p class="muted">Kommer drivas av Family Hub.</p></div>
+        </div>
+        <div class="grid" style="margin-top:18px">
+          <div class="card"><h3>Senaste samtal</h3><div class="list" id="callList"></div></div>
+          <div class="card"><h3>Notiser</h3><div class="list" id="notificationList"></div></div>
+        </div>
+      </section>
+
+      <section id="core" class="page">
+        <h2 class="sectionTitle">ScamGuard Core</h2>
+        <div class="coreMap" id="moduleList"></div>
+        <p class="footerNote">Core gör att varje modul kan byggas separat: Protection, Calls, Family, Reports, Trust Center, Telephony och AI.</p>
+      </section>
+
+      <section id="events" class="page">
+        <h2 class="sectionTitle">Event Engine</h2>
+        <div class="card"><div class="list" id="eventList"></div></div>
+      </section>
+
+      <section id="api" class="page">
+        <h2 class="sectionTitle">Mock API-kontrakt</h2>
+        <div class="grid">
+          <div class="card"><h3>Endpoints</h3><div class="list"><div class="row"><span>/api/health</span><span class="tag ready">ready</span></div><div class="row"><span>/api/core</span><span class="tag ready">ready</span></div><div class="row"><span>/api/events</span><span class="tag ready">ready</span></div><div class="row"><span>/api/notifications</span><span class="tag ready">ready</span></div><div class="row"><span>/api/models</span><span class="tag ready">ready</span></div></div></div>
+          <div class="card"><h3>Princip</h3><p class="muted">Allt UI ska kunna byta från mock-data till riktiga API-anrop utan att komponenterna behöver skrivas om.</p><button class="btn secondary" onclick="loadApi()">Hämta /api/core</button><pre id="apiOut" style="white-space:pre-wrap;background:#092e29;color:#dcfff3;padding:14px;border-radius:18px;overflow:auto;max-height:320px"></pre></div>
+        </div>
+      </section>
+    </main>
+  </div>
+<script>
+const state = __SCAMGUARD_STATE__;
+function riskClass(r){return r==='high'?'high':r==='medium'?'medium':'low'}
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('#nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+document.getElementById('callList').innerHTML=state.calls.map(c=>`<div class="row"><div><b>${c.label}</b><div class="muted">${c.time} · ${c.outcome}</div></div><span class="risk ${riskClass(c.risk)}">${c.risk}</span></div>`).join('');
+document.getElementById('notificationList').innerHTML=state.notifications.map(n=>`<div class="row"><div><b>${n.title}</b><div class="muted">${n.text}</div></div></div>`).join('');
+document.getElementById('moduleList').innerHTML=state.modules.map(m=>`<div class="module"><div class="moduleIcon">${m.state==='ready'?'✓':m.state==='mock'?'◇':'→'}</div><div style="flex:1"><b>${m.name}</b><div class="muted">${m.purpose}</div></div><span class="tag ${m.state}">${m.state}</span></div>`).join('');
+document.getElementById('eventList').innerHTML=state.events.map(e=>`<div class="row"><div><b>${e.title}</b><div class="muted">${e.detail}</div></div><span class="tag">${e.time}</span></div>`).join('');
+async function loadApi(){const r=await fetch('/api/core');document.getElementById('apiOut').textContent=JSON.stringify(await r.json(),null,2)}
+</script>
+</body>
+</html>

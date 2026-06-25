@@ -1,8 +1,4 @@
 name = "scamguard-platform"
-main = "src/worker.ts"
+main = "src/worker/index.js"
 compatibility_date = "2026-06-25"
-
-[assets]
-directory = "./dist"
-binding = "ASSETS"
-not_found_handling = "single-page-application"
+workers_dev = true
