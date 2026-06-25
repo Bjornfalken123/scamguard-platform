@@ -1,24 +1,26 @@
-# ScamGuard Platform v0.3.0 — Design Foundation
+# ScamGuard Platform v0.3.1 — Dashboard Experience
 
-This release replaces the experimental prototype with a React/Vite PWA foundation that is ready for future product releases.
+This release moves ScamGuard from architecture/demo into a user-facing product experience.
+
+## Added
+- Complete mobile-first Dashboard experience
+- Protection page with simulated forwarding setup
+- Calls history page
+- Family page
+- Reports page
+- Mock API endpoints:
+  - `/api/health`
+  - `/api/dashboard`
+  - `/api/calls`
+  - `/api/family`
+- PWA manifest
+- Improved product copy and Swedish UI
 
 ## Cloudflare settings
+Root directory: empty
+Build command: `npm install && npm run build`
+Deploy command: `npx wrangler deploy`
+Output directory: empty
 
-- Root directory: empty
-- Build command: `npm install && npm run build`
-- Deploy command: `npx wrangler deploy`
-- Output directory: empty
-
-## What is included
-
-- React/Vite PWA foundation
-- Design tokens and global theme
-- Reusable UI components
-- App shell and mobile-first navigation
-- Mock API/data layer
-- Dashboard, Protection, Calls, Family, Reports, Installation, Settings, Support pages
-- API endpoints: `/api/health`, `/api/foundation`, `/api/mock/dashboard`
-
-## Next release
-
-v0.3.1 — Dashboard depth: richer dashboard, more realistic AI states, detailed action cards.
+## Notes
+No external services are connected. Telephony, AI and notifications are simulated.

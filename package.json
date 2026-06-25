@@ -1,1 +1,1 @@
-{"name":"scamguard-platform","version":"0.3.0","private":true,"type":"module","scripts":{"build":"node scripts/build.js","deploy":"wrangler deploy"},"dependencies":{"wrangler":"latest"}}
+{"scripts":{"build":"node scripts/build.mjs","dev":"vite --host 0.0.0.0"},"dependencies":{"@cloudflare/vite-plugin":"latest","vite":"latest","typescript":"latest","wrangler":"latest"},"devDependencies":{}}

@@ -1,7 +1,4 @@
 name = "scamguard-platform"
-compatibility_date = "2026-06-23"
-main = "src/worker.js"
+main = "worker.js"
+compatibility_date = "2026-06-01"
 assets = { directory = "./dist", binding = "ASSETS" }
-
-[observability]
-enabled = true
