@@ -1,3 +1,0 @@
-import { Card } from '../components/Card';
-import { StatCard } from '../components/StatCard';
-export function Reports(){return <div className="page-grid"><Card className="hero-card"><p className="eyebrow">Rapporter</p><h1>Trygghet som går att se</h1><p>Rapporter visar värdet av skyddet utan att skapa oro i vardagen.</p></Card><div className="stats-grid"><StatCard label="Stoppade försök" value="12" helper="30 dagar"/><StatCard label="Screenade samtal" value="74" helper="30 dagar"/><StatCard label="Falska alarm" value="1" helper="under uppföljning"/></div><Card><h3>Månadssammanfattning</h3><p>De vanligaste risksignalerna var BankID, tidspress och påstådd teknisk support. Inga kritiska samtal nådde användaren direkt.</p></Card></div>}

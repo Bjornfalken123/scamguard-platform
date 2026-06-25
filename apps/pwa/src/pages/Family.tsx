@@ -1,4 +1,0 @@
-import { family } from '../mock/data';
-import { Card } from '../components/Card';
-import { Button } from '../components/Button';
-export function Family(){return <div className="page-grid"><Card className="hero-card"><p className="eyebrow">Anhöriga</p><h1>Familjen får kontroll utan att störa</h1><p>Anhöriga kan få varningar, se rapporter och hjälpa till med inställningar.</p></Card><Card><div className="section-head"><h3>Kopplade anhöriga</h3><Button>Lägg till</Button></div><div className="people-list">{family.map(f=><div className="person-row" key={f.id}><div className="avatar">{f.name[0]}</div><div><strong>{f.name}</strong><span>{f.relation} · prioritet {f.priority}</span></div><span className={f.alerts?'pill success':'pill'}>{f.alerts?'Varningar på':'Av'}</span></div>)}</div></Card></div>}
